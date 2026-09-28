@@ -147,8 +147,11 @@ class ExplainabilityTests(unittest.TestCase):
 
     def test_original_modeling_table_is_not_modified(self):
         path = Path("data/processed/modeling_table.csv")
+        folds = Path("experiments/common_cohort_student_folds.csv")
+        if not path.exists() or not folds.exists():
+            self.skipTest("local modeling table or fold assignments are not present")
         before = hashlib.sha256(path.read_bytes()).hexdigest()
-        load_fold_assignments(Path("experiments/common_cohort_student_folds.csv"))
+        load_fold_assignments(folds)
         after = hashlib.sha256(path.read_bytes()).hexdigest()
         self.assertEqual(before, after)
 
