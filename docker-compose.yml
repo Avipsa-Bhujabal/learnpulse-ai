@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      LEARNPULSE_ARTIFACT_DIR: /models/reference_model
+    volumes:
+      - ./artifacts/reference_model:/models/reference_model:ro
+    read_only: true
+    tmpfs: [/tmp]

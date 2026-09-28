@@ -1,0 +1,11 @@
+artifact_dir: artifacts/reference_model
+host: 127.0.0.1
+port: 8000
+maximum_batch_size: 1000
+maximum_request_bytes: 1048576
+logging_level: INFO
+allowed_threshold_policies: [fixed, recall_focused, f1_focused, alert_capacity, cost_sensitive]
+research_only_banner: "Research scoring only; not for automatic learner decisions."
+privacy:
+  log_payloads: false
+  accept_demographics: false

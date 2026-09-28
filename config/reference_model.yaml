@@ -1,0 +1,8 @@
+artifact_name: research_reference_model
+model_version: 1.0.0
+schema_version: reference-personal-change-v1
+random_seed: 42
+folds: 5
+modeling_table: data/processed/multicourse_modeling_table.parquet
+artifact_dir: artifacts/reference_model
+research_only: true

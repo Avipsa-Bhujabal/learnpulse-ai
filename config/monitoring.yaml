@@ -1,0 +1,6 @@
+psi_warning: 0.10
+psi_critical: 0.25
+missing_rate_warning: 0.05
+standardized_mean_warning: 0.50
+levels: [informational, warning, critical]
+thresholds_are_illustrative: true
