@@ -1,0 +1,3 @@
+# Privacy and security
+
+Scoring neither requires nor accepts student identifiers or demographics. Logs exclude feature payloads, references, predictions, withdrawal and final result. Individual batch outputs are restricted and ignored. The API cannot read caller paths, upload Joblib objects, execute code or accept SQL; it enforces content and batch limits and returns controlled errors. The container runs non-root with artifacts mounted read-only. This local research prototype lacks authentication and must not be exposed remotely or used for automatic, punitive or adverse learner decisions. Human review is mandatory.

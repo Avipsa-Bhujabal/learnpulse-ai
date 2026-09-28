@@ -1,0 +1,3 @@
+# Reproducibility
+
+Use Python 3.10+ and `pip install -r requirements.txt`. Run `python -m unittest discover -s tests -v`, build with `python -m learnpulse.reference_model_cli --modeling-table data/processed/multicourse_modeling_table.parquet --artifact-dir artifacts/reference_model --folds 5 --random-seed 42 --model-version 1.0.0`, and validate through the local registry. Seeds, input hashes, dependency versions, schemas, fold counts and a logical fingerprint are recorded. Publication uses same-volume staging and replacement. Miniature tests require no OULAD download. Container commands are `docker build -t learnpulse-reference .` and `docker compose up`.
