@@ -170,7 +170,10 @@ def run_release_audit(repository: Path, output_dir: Path | None=None, test_count
     for rel in EXPECTED:
         path=repository/rel
         if path.is_file() and rel.startswith(("experiments/", "artifacts/", "data/")):protected.append(signature(path,repository))
-    summary=extract_project_summary(repository,test_count)
+    try:
+        summary=extract_project_summary(repository,test_count)
+    except FileNotFoundError as error:
+        summary={"status":"source_artifacts_not_distributed","reason":"Public release excludes scientific result payloads and model artifacts.","missing_source":Path(error.filename).relative_to(repository).as_posix() if error.filename else None,"test_count":test_count}
     audit={"created_at_utc":utc_now(),"repository":str(repository),"inventory_summary":{k:v for k,v in inventory.items() if k!="files"},
            "broken_links":broken,"public_scan":public,"protected_signatures":protected,"files_deleted":[],
            "audit_is_read_only":True,"warnings":["Daily-activity recursive manifest is a prospective baseline, not retrospective proof."]}
