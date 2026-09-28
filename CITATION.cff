@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this research software, please cite it using this metadata."
+title: "LearnPulse AI: OULAD future-inactivity research prototype"
+type: software
+version: 1.0.0
+authors:
+  - family-names: Bhujabal
+    given-names: Avipsa
+date-released: 2026-09-25
+license: MIT
+repository-code: "local research repository; public URL not yet assigned"

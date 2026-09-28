@@ -1,0 +1,56 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# The official OULAD files are large and should be downloaded separately.
+data/raw/oulad/
+data/raw/*.zip
+
+# Rebuildable Step 10A analytical data payloads.
+data/processed/daily_activity/
+data/processed/*.duckdb
+data/processed/*.duckdb.wal
+
+# Rebuildable multi-course modeling tables (JSON reports remain tracked).
+data/processed/multicourse_modeling_table*.parquet
+data/processed/multicourse_modeling_table*.csv
+data/processed/.multicourse_temp/
+experiments/temporal_examples.csv
+experiments/workload_case_results.parquet
+experiments/workload_examples.csv
+experiments/dev_workload_case_results.parquet
+experiments/dev_workload_examples.csv
+experiments/*predictions*.parquet
+experiments/*predictions*.csv
+experiments/*trajectories.csv
+experiments/individual_explanations.csv
+experiments/dev_*/
+artifacts/*.joblib
+artifacts/**/model.joblib
+artifacts/**/*.staging*
+artifacts/**/*.backup*
+experiments/reference_scores*
+experiments/dev_production/
+experiments/monitoring/raw/
+logs/
+.env
+.env.*
+docker-data/
+*.tmp
+experiments/release/*.tmp
+docs/assets/*.pending
+
+# Local tooling and release packages
+.ruff_cache/
+.vscode/
+.idea/
+experiments/dev_*
+dist/*.zip
+
+# Non-public local research corpus and generated evidence
+data/
+artifacts/
+experiments/
+research/
+scripts/
